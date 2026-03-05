@@ -9,8 +9,8 @@ import se.yrgo.services.customers.*;
 import se.yrgo.services.diary.DiaryManagementService;
 
 public class CallHandlingServiceImpl implements CallHandlingService {
-    private DiaryManagementService diaryManagementService;
-    private CustomerManagementService customerManagementService;
+    private final DiaryManagementService diaryManagementService;
+    private final CustomerManagementService customerManagementService;
     CallHandlingServiceImpl(CustomerManagementService customerManagementService, DiaryManagementService diaryManagementService) {
         this.customerManagementService = customerManagementService;
         this.diaryManagementService = diaryManagementService;
@@ -20,6 +20,6 @@ public class CallHandlingServiceImpl implements CallHandlingService {
         customerManagementService.recordCall(customerId, newCall);
         for(Action action : actions){
             diaryManagementService.recordAction(action);
-        };
+        }
     }
 }

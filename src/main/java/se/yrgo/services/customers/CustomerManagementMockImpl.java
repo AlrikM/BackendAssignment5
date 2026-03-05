@@ -30,13 +30,11 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 
 	@Override
 	public void deleteCustomer(Customer oldCustomer) {
-		// TODO Auto-generated method stub
 		customerMap.remove(oldCustomer.getCustomerId());
 	}
 
 	@Override
 	public Customer findCustomerById(String customerId) throws CustomerNotFoundException {
-		// TODO Auto-generated method stub
 		Customer c = new Customer();
 		for (Customer customer : customerMap.values()) {
 			if (customer.getCustomerId().equals(customerId)) {
@@ -48,7 +46,6 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 
 	@Override
 	public List<Customer> findCustomersByName(String name) {
-		// TODO Auto-generated method stub
 		ArrayList<Customer> customerList = new ArrayList<>();
 		for (Customer c : customerMap.values()) {
 			if (c.getCompanyName().equals(name)) {
@@ -60,13 +57,11 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 
 	@Override
 	public List<Customer> getAllCustomers() {
-		// TODO Auto-generated method stub
 		return new ArrayList<Customer>(customerMap.values());
 	}
 
 	@Override
 	public Customer getFullCustomerDetail(String customerId) throws CustomerNotFoundException {
-		// TODO Auto-generated method stub
 		return customerMap.get(customerId);
     }
 

@@ -10,12 +10,9 @@ public interface CustomerManagementService {
 
 	public void newCustomer(Customer newCustomer);
 
-
 	public void updateCustomer(Customer changedCustomer);
 
-
 	public void deleteCustomer(Customer oldCustomer);
-
 
 	public Customer findCustomerById(String customerId) throws CustomerNotFoundException;
 
@@ -23,9 +20,7 @@ public interface CustomerManagementService {
 
 	public List<Customer> getAllCustomers();
 
-
 	public Customer getFullCustomerDetail(String customerId) throws CustomerNotFoundException;
 
-	
 	public void recordCall(String customerId, Call callDetails) throws CustomerNotFoundException;
 }
